@@ -62,16 +62,12 @@ function App() {
   //&& allows you to do a ternary operator without any else clause
   return (
     <div className="container">
-      <Header onToggleAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+      <Header onToggleAdd={() => setShowAddTask(!showAddTask)} showAddTask={showAddTask} />
       {showAddTask && <AddTask onAdd={addTask} />}
 
       {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask}
         onToggle={toggleReminder} />) :
         ("There are no tasks to show")}
-
-
-
-
 
     </div>
   );
